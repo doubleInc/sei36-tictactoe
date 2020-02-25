@@ -13,13 +13,19 @@
   font-family: "Roboto", sans-serif;
 }
 
+h1 {
+  font-family: "Raleway";
+  color: white;
+  font-size: 3em;
+}
+
 .brand {
   display: inline-block;
-  padding-bottom: 4px;
+  font-weight: 200;
 }
 
 .font-size__1-5 {
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 
 .font-size__2 {
@@ -34,7 +40,12 @@
   transform: rotate(18deg);
 }
 
-nav a {
+nav > div {
+  font-size: 1.25em;
+}
+
+nav a,
+footer a {
   text-decoration: none;
 }
 
