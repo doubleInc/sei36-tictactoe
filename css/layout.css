@@ -22,6 +22,19 @@
   text-align: right;
 }
 
+/* Margins */
+
+.margin-right__1 {
+  margin-right: 1em;
+}
+
+.margin-left__1 {
+  margin-left: 1em;
+}
+.margin-left__half {
+  margin-left: 0.5em;
+}
+
 /* Navigation */
 
 .navbar-default {

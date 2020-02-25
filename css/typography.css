@@ -9,16 +9,45 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css");
 
-body {
+* {
   font-family: "Roboto", sans-serif;
 }
 
-/* font awseome styles */
+.brand {
+  display: inline-block;
+  padding-bottom: 4px;
+}
 
-.fab {
+.font-size__1-5 {
+  font-size: 1.5em;
+}
+
+.font-size__2 {
+  font-size: 2em;
+}
+
+.font-size__3 {
   font-size: 3em;
 }
 
 .rotate-icon {
   transform: rotate(18deg);
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+.logo-grow {
+  transition: transform 500ms ease-out;
+}
+
+.logo-grow:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }

@@ -9,6 +9,18 @@
   color: #ffffff;
 }
 
+.light-grey {
+  color: #e0e0e0;
+}
+
+.brown {
+  color: #3e2723;
+}
+
 .primary-bg {
   background-color: #170c0f;
+}
+
+.brown-bg {
+  background-color: #3e2723;
 }
