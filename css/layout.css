@@ -1,0 +1,29 @@
+/*
+    Layouts
+*/
+
+.flex-container {
+  display: flex;
+}
+
+.flex-align__center {
+  align-items: center;
+}
+
+.flex-item {
+  flex-grow: 1;
+}
+
+.flex-item__7 {
+  flex-grow: 7;
+}
+
+.flex-item__align-right {
+  text-align: right;
+}
+
+/* Navigation */
+
+.navbar-default {
+  height: 6em;
+}

@@ -1,0 +1,24 @@
+/*
+    Typography
+
+    googlefonts;
+    font-family: 'Raleway', ;
+    font-family: 'Roboto', ;
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* font awseome styles */
+
+.fab {
+  font-size: 3em;
+}
+
+.rotate-icon {
+  transform: rotate(18deg);
+}
