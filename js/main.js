@@ -9,15 +9,15 @@ let gameState = function() {
   return new Array(9).fill(""); //[ '', '', '', '', '', '', '', '', '' ]
 };
 
-let currentGame;
+var currentGame;
 
-let gameStatus = false; // game in progress or not.
+var gameStatus = false; // game in progress or not.
 
 let currentPlayer = 1; // 'X' = 1, 'O' = 0
 
 //start a new game
 function startGame() {
-  //gameStatus = true;
+  gameStatus = true;
   gameStatus;
 
   currentPlayer = 1; // x to start
@@ -45,16 +45,20 @@ function checkBoard(gameState = currentGame) {
 
   for (let i = 0; i < winPerms.length; i++) {
     const winCondition = winPerms[i];
-    let a = gameState[winCondition[0]];
-    let b = gameState[winCondition[1]];
-    let c = gameState[winCondition[2]];
-    if (!winCondition.includes("")) {
-      // no blanks in win condition
+    // array to hold current win permutation
+    let [a, b, c] = [
+      gameState[winCondition[0]],
+      gameState[winCondition[1]],
+      gameState[winCondition[2]]
+    ];
+
+    if ([a, b, c].includes("") === false) {
+      // no blanks in current win permutation
+
       if (a === b && b === c) {
         roundWon = true;
         break;
       } else {
-        //gameStatus = true;
         continue;
       }
     }
@@ -63,20 +67,18 @@ function checkBoard(gameState = currentGame) {
   if (roundWon) {
     //update html
     gameStatus = false;
-    return roundWon;
+    return "win";
   }
 
   let roundDraw = !gameState.includes("");
   if (roundDraw) {
     //update html
     gameStatus = false;
-    return roundDraw;
+    return "draw";
   }
   //game in progress
-  return gameStatus;
+  gameStatus = true;
+  return "in progress";
 
   //player change;
 }
-// startGame();
-// checkBoard([1, 1, 0, 0, 0, 1, 1, 0, ""]);
-// gameStatus;
