@@ -31,3 +31,30 @@ main {
 .hide {
   display: none;
 }
+
+.slider > div {
+  margin-top: 3em;
+  max-height: 100vh;
+}
+
+#game-board {
+  /* Wrap forces items onto multiple lines. Remember default flex-direction is row so 
+  it's ommited. */
+  flex-wrap: wrap;
+  /* Items are distributed/spaced evenly along the axis.*/
+  justify-content: space-between;
+}
+
+#game-board > .flex-item {
+  /* Step 2. 
+    
+    Each child is given the same flex-basis 32%, space to take up along the axis.
+    Bottom margin of 2% to even out display, to equal the vertical gap.
+    (100% - 32x3 = 4/2 = 2)
+  */
+  flex: 0 32%;
+  margin-bottom: 2%;
+
+  /* Height of each element for this example. Should be adjusted accordingly.*/
+  height: 160px;
+}

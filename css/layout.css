@@ -59,6 +59,11 @@
 .margin-top__1 {
   margin-top: 1em;
 }
+
+.margin-top__half {
+  margin-top: 0.5em;
+}
+
 .margin-top__2 {
   margin-top: 2em;
 }
@@ -71,6 +76,19 @@
 .margin-bottom__8 {
   margin-bottom: 8em;
 }
+
+/* padding */
+
+.padding-top__half {
+  padding-top: 0.5em;
+}
+.padding-top__1 {
+  padding-top: 1em;
+}
+.padding-top__2 {
+  padding-top: 2em;
+}
+
 /* Navigation */
 
 .navbar-default {
@@ -81,4 +99,8 @@
   margin-right: auto;
   margin-left: auto;
   max-width: 80%;
+}
+
+.border__1 {
+  border: 1px solid;
 }

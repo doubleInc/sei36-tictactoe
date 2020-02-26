@@ -23,21 +23,32 @@
       </nav>
     </header>
     <main class="flex-item__2 primary-bg" id="main-container">
-    <!-- Main content start -->
+    <!-- Main content start <i class="fab fa-telegram-plane"></i>-->
     <div class="flex-container flex-direction__colomn">
       <div class="container flex-item tac margin-bottom__8">
         <h1 class="nunito-light font-size__5 white font-weight__100" id="tagline">Tic Tac Toe or Noughts and Crosses</h1>
         <p class="white font-weight__300 font-size__1-5">A simple, two-player game that, if played optimally by both players, will always result in a tie. The game is also called noughts and crosses or Xs and Os.</p>
-        <a href="#" class="btn btn-default">Play</a>
+        <a href="#" class="btn btn-default margin-right__half">Play<i class="fab fa-telegram-plane font-size__1-5 margin-left__half"></i></a>
       </div>
     </div>
     <!--Overlay for gameboard -->
     <div class="slider washed-pink-bg">
-      <div class="flex-container">
-        <div class="flex-item "></div>
-        <div class="flex-item__7"></div>
-        <div class="flex-item">
-          <div class=""><a href="#" class="btn btn-rect blue-grey" id="close-overlay">Close</a></div>
+      <div class="flex-container" id="game-container">
+        <div class="flex-item"></div>
+        <!-- Game board -->
+        <div class="flex-item__7 flex-container" id="game-board">
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+            <div class="flex-item border__1"></div>
+        </div>
+        <div class="flex-item margin-left__2">
+          <a href="#" class="btn btn-rect blue-grey" id="close-overlay">Close</a>
         </div>
       </div>
     </div>
