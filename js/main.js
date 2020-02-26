@@ -5,11 +5,26 @@
     ...
 */
 
-let gameState = new Array(9).fill(""); //[ '', '', '', '', '', '', '', '', '' ]
+let gameState = function() {
+  return new Array(9).fill(""); //[ '', '', '', '', '', '', '', '', '' ]
+};
+
+let currentGame;
 
 let gameStatus = false; // game in progress or not.
 
 let currentPlayer = 1; // 'X' = 1, 'O' = 0
+
+//start a new game
+function startGame() {
+  //gameStatus = true;
+  gameStatus;
+
+  currentPlayer = 1; // x to start
+  //reset board
+  currentGame = gameState();
+  //Dom update
+}
 
 //possible winning paterns
 const winPerms = [
@@ -24,37 +39,44 @@ const winPerms = [
 ];
 
 winPerms.length;
-gameState = [1, 0, 0, 0, 0, 1, 1, 0, 0];
-checkBoard();
 
-function checkBoard() {
+function checkBoard(gameState = currentGame) {
   let roundWon = false; //track a victory
+
   for (let i = 0; i < winPerms.length; i++) {
     const winCondition = winPerms[i];
     let a = gameState[winCondition[0]];
     let b = gameState[winCondition[1]];
     let c = gameState[winCondition[2]];
-    if (winPerms[i].includes("")) {
-      continue;
-    }
-    if (a === b && b === c) {
-      roundWon = true;
-      break;
+    if (!winCondition.includes("")) {
+      // no blanks in win condition
+      if (a === b && b === c) {
+        roundWon = true;
+        break;
+      } else {
+        //gameStatus = true;
+        continue;
+      }
     }
   }
 
   if (roundWon) {
     //update html
     gameStatus = false;
-    return "Win";
+    return roundWon;
   }
 
   let roundDraw = !gameState.includes("");
   if (roundDraw) {
     //update html
     gameStatus = false;
-    return "Draw";
+    return roundDraw;
   }
+  //game in progress
+  return gameStatus;
 
   //player change;
 }
+// startGame();
+// checkBoard([1, 1, 0, 0, 0, 1, 1, 0, ""]);
+// gameStatus;
