@@ -62,7 +62,7 @@ h1 {
 }
 
 .rotate-icon {
-  transform: rotate(18deg);
+  transform: rotate(17deg);
 }
 
 /* Targeted */
@@ -90,6 +90,24 @@ nav a:hover {
   -ms-transform: scale(1.3);
   transform: scale(1.3);
   color: #d81b60;
+  /* animatioin */
+  animation: 1s multicolor;
+  -webkit-animation: 1s multicolor;
+}
+/* keyframes for color change */
+@keyframes multicolor {
+  0% {
+    color: #ffffff;
+  }
+  33% {
+    color: #29b6f6;
+  }
+  66% {
+    color: #00e676;
+  }
+  99% {
+    color: #d81b60;
+  }
 }
 
 .brand {
