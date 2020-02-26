@@ -28,6 +28,10 @@
   text-align: right;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 /* Margins */
 
 .margin-right__1 {
@@ -63,4 +67,10 @@
 
 .navbar-default {
   height: 6em;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 80%;
 }

@@ -4,8 +4,52 @@
 
     ...
 */
+// animations
+$(document).ready(function() {
+  $(".btn").on("click", function(e) {
+    e.preventDefault();
 
-let gameState = function() {
+    $(".slider").animate(
+      {
+        opacity: "1",
+        marginTop: "-=500"
+      },
+      1000,
+      "linear"
+    );
+  });
+});
+
+// $(document).ready(function() {
+//   $(".animsition").animsition({
+//     inClass: "fade-in-up",
+//     outClass: "fade-out-up",
+//     inDuration: 1500,
+//     outDuration: 800,
+//     linkElement: ".animsition-link",
+//     // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+//     loading: true,
+//     loadingParentElement: "#main-container", //animsition wrapper element
+//     loadingClass: "animsition-loading",
+//     loadingInner: "", // e.g '<img src="loading.svg" />'
+//     timeout: false,
+//     timeoutCountdown: 5000,
+//     onLoadEvent: true,
+//     browser: ["animation-duration", "-webkit-animation-duration"],
+//     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+//     // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+//     overlay: false,
+//     overlayClass: "animsition-overlay-slide",
+//     overlayParentElement: "body",
+//     transition: function(url) {
+//       window.location.href = url;
+//     }
+//   });
+// });
+
+// game logic
+
+const gameState = function() {
   return new Array(9).fill(""); //[ '', '', '', '', '', '', '', '', '' ]
 };
 
@@ -13,7 +57,7 @@ var currentGame;
 
 var gameStatus = false; // game in progress or not.
 
-let currentPlayer = 1; // 'X' = 1, 'O' = 0
+var currentPlayer = 1; // 'X' = 1, 'O' = 0
 
 //start a new game
 function startGame() {
@@ -24,6 +68,13 @@ function startGame() {
   //reset board
   currentGame = gameState();
   //Dom update
+}
+
+// player change
+function handlePlayerChange() {
+  //if player X, swap to O else swap to X
+  currentPlayer = currentPlayer === 1 ? 0 : 1;
+  // html update
 }
 
 //possible winning paterns

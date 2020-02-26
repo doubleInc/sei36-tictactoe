@@ -2,11 +2,11 @@
     Typography
 
     googlefonts;
-    font-family: 'Raleway', ;
     font-family: 'Roboto', ;
 */
 
-@import url("https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Nunito:200&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700,900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css");
 
 * {
@@ -14,14 +14,33 @@
 }
 
 h1 {
-  font-family: "Raleway";
-  color: white;
   font-size: 3em;
 }
 
-.brand {
-  display: inline-block;
+/* Text align */
+.tac {
+  text-align: center;
+}
+.tar {
+  text-align: right;
+}
+
+/* font families */
+
+.nunito-light {
+  font-family: "Nunito", sans-serif;
+}
+
+/* font properties */
+
+.font-weight__100 {
+  font-weight: 100;
+}
+.font-weight__200 {
   font-weight: 200;
+}
+.font-weight__300 {
+  font-weight: 300;
 }
 
 .font-size__1-5 {
@@ -35,10 +54,18 @@ h1 {
 .font-size__3 {
   font-size: 3em;
 }
+.font-size__4 {
+  font-size: 4em;
+}
+.font-size__5 {
+  font-size: 5em;
+}
 
 .rotate-icon {
   transform: rotate(18deg);
 }
+
+/* Targeted */
 
 nav > div {
   font-size: 1.25em;
@@ -47,6 +74,7 @@ nav > div {
 nav a,
 footer a {
   text-decoration: none;
+  transition: color 0.3s ease-in;
 }
 
 nav a:hover {
@@ -54,11 +82,17 @@ nav a:hover {
 }
 
 .logo-grow {
-  transition: transform 500ms ease-out;
+  transition: all 500ms ease-out;
 }
 
 .logo-grow:hover {
   -webkit-transform: scale(1.3);
   -ms-transform: scale(1.3);
   transform: scale(1.3);
+  color: #d81b60;
+}
+
+.brand {
+  display: inline-block;
+  font-weight: 200;
 }

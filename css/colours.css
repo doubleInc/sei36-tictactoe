@@ -5,6 +5,10 @@
   color: #170c0f;
 }
 
+.primary-bg {
+  background-color: #1b1211;
+}
+
 .white {
   color: #ffffff;
 }
@@ -30,5 +34,5 @@
 }
 
 .dark-grey-bg {
-  background-color: #263238;
+  background-color: #212121;
 }

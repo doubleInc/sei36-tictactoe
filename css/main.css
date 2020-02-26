@@ -6,9 +6,20 @@
 @import url("./colours.css");
 @import url("./typography.css");
 @import url("./layout.css");
-@import url("./css/all.css");
+@import url("./buttons.css");
+@import url("./animsition.css");
 
 /* */
 main {
-  min-height: 75vh;
+  min-height: 60vh;
+}
+
+/* */
+.slider {
+  margin-top: 500px;
+  opacity: 0;
+}
+
+.slider.closed {
+  max-height: 0;
 }
