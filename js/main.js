@@ -6,6 +6,7 @@
 */
 // animations
 $(document).ready(function() {
+  // show overlay
   $(".btn").on("click", function(e) {
     e.preventDefault();
     $(".slider").addClass("show");
@@ -18,7 +19,7 @@ $(document).ready(function() {
     );
   });
 
-  //
+  //hide overlay
   $("#close-overlay").on("click", function(e) {
     e.preventDefault();
     $(".slider")
@@ -27,9 +28,8 @@ $(document).ready(function() {
           opacity: "0"
         },
         100,
-        "swing"
+        "linear"
       )
-      .delay(100)
       .queue(function(next) {
         $(".slider").removeClass("show");
         next();
@@ -78,8 +78,6 @@ const winPerms = [
   [0, 4, 8],
   [2, 4, 6]
 ];
-
-winPerms.length;
 
 function checkBoard(gameState = currentGame) {
   let roundWon = false; //track a victory
