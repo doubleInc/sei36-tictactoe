@@ -40,6 +40,7 @@ $(document).ready(function() {
         next();
         // reset board
         resetGame();
+        $("#game-info").text("");
       });
   });
 
@@ -79,18 +80,24 @@ $(document).ready(function() {
 
     if (moves > 4) {
       const outcome = checkBoard();
-      console.log(outcome);
+      // check for win or a draw
+      if (outcome.matchWon === true) {
+        $("#game-info").text(`${outcome.playerWon} wins!`);
+      } else if (outcome.matchWon === "draw") {
+        $("#game-info").text(`Match was drawn!`);
+      }
     }
 
     // change players
     handlePlayerChange();
-    console.log(currentGame, currentPlayer);
+    console.log(currentGame, currentPlayer, gameStatus);
   });
 
   // reset game board
   $("#reset").on("click", function() {
     //alert($(this).attr("data-id"));
     resetGame();
+    $("#game-info").text("");
     console.log("Game reset! ");
   });
 });
@@ -148,6 +155,7 @@ const winPerms = [
 
 function checkBoard(gameState = currentGame) {
   let roundWon = false; //track a victory
+  let playerWon = ""; //store winning player
 
   for (let i = 0; i < winPerms.length; i++) {
     const winCondition = winPerms[i];
@@ -163,6 +171,7 @@ function checkBoard(gameState = currentGame) {
 
       if (a === b && b === c) {
         roundWon = true;
+        playerWon = a;
         break;
       } else {
         continue;
@@ -173,14 +182,19 @@ function checkBoard(gameState = currentGame) {
   if (roundWon) {
     //update html
     gameStatus = false;
-    return "win";
+    return {
+      playerWon,
+      matchWon: roundWon
+    };
   }
-
+  // draw
   let roundDraw = !gameState.includes("");
   if (roundDraw) {
     //update html
     gameStatus = false;
-    return "draw";
+    return {
+      matchWon: "draw"
+    };
   }
   //game in progress
   gameStatus = true;
