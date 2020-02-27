@@ -120,3 +120,13 @@
 .border-right__1 {
   border-right: 1px solid;
 }
+
+footer li {
+  list-style-type: none;
+  color: white;
+}
+
+footer > .flex-container {
+  margin-bottom: 0;
+  margin-left: 2em;
+}
