@@ -49,11 +49,26 @@ $(document).ready(function() {
 
     //console.log(boardIndex);
 
-    if (currentPlayer === 1 && currentGame[boardIndex] === "") {
+    if (
+      gameStatus === true &&
+      currentPlayer === 1 &&
+      currentGame[boardIndex] === ""
+    ) {
       currentGame[boardIndex] = "X";
+      //update dom
+      $(this)
+        .children("h1")
+        .text("X");
       moves++;
-    } else if (currentPlayer === 0 && currentGame[boardIndex] === "") {
+    } else if (
+      gameStatus === true &&
+      currentPlayer === 0 &&
+      currentGame[boardIndex] === ""
+    ) {
       currentGame[boardIndex] = "O";
+      $(this)
+        .children("h1")
+        .text("O");
       moves++;
     } else {
       // board slot already taken
@@ -73,8 +88,12 @@ $(document).ready(function() {
   // reset game board
   $("#reset").on("click", function() {
     //alert($(this).attr("data-id"));
+    const eles = $("#game-board h1");
+    eles.each(function(index, element) {
+      $(this).text("");
+    });
     startGame();
-    console.log("Game reset!");
+    console.log("Game reset! ");
   });
 });
 
