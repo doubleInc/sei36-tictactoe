@@ -4,6 +4,7 @@
 
     ...
 */
+
 // animations
 $(document).ready(function() {
   // show overlay
@@ -17,6 +18,10 @@ $(document).ready(function() {
       500,
       "linear"
     );
+
+    // start game
+    startGame();
+    //console.log(gameStatus); //->true
   });
 
   //hide overlay
@@ -35,6 +40,42 @@ $(document).ready(function() {
         next();
       });
   });
+
+  //game dom stuff
+  let moves = 0; //track number of moves
+  // Get board number
+  $("#game-board>div").on("click", function() {
+    let boardIndex = Number($(this).attr("data-id"));
+
+    //console.log(boardIndex);
+
+    if (currentPlayer === 1 && currentGame[boardIndex] === "") {
+      currentGame[boardIndex] = "X";
+      moves++;
+    } else if (currentPlayer === 0 && currentGame[boardIndex] === "") {
+      currentGame[boardIndex] = "O";
+      moves++;
+    } else {
+      // board slot already taken
+      return;
+    }
+
+    if (moves > 4) {
+      const outcome = checkBoard();
+      console.log(outcome);
+    }
+
+    // change players
+    handlePlayerChange();
+    console.log(currentGame, currentPlayer);
+  });
+
+  // reset game board
+  $("#reset").on("click", function() {
+    //alert($(this).attr("data-id"));
+    startGame();
+    console.log("Game reset!");
+  });
 });
 
 // game logic
@@ -43,6 +84,7 @@ const gameState = function() {
   return new Array(9).fill(""); //[ '', '', '', '', '', '', '', '', '' ]
 };
 
+// game board state
 var currentGame;
 
 var gameStatus = false; // game in progress or not.
@@ -52,7 +94,6 @@ var currentPlayer = 1; // 'X' = 1, 'O' = 0
 //start a new game
 function startGame() {
   gameStatus = true;
-  gameStatus;
 
   currentPlayer = 1; // x to start
   //reset board
