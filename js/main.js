@@ -61,7 +61,10 @@ $(document).ready(function() {
       //update dom
       $(this)
         .children("h1")
-        .text("X");
+        .addClass("coral-blue")
+        .text("X")
+        .hide()
+        .fadeIn(666);
       moves++;
     } else if (
       gameStatus === true &&
@@ -71,7 +74,10 @@ $(document).ready(function() {
       currentGame[boardIndex] = "O";
       $(this)
         .children("h1")
-        .text("O");
+        .addClass("pink")
+        .text("O")
+        .hide()
+        .fadeIn(666);
       moves++;
     } else {
       // board slot already taken
@@ -82,15 +88,22 @@ $(document).ready(function() {
       const outcome = checkBoard();
       // check for win or a draw
       if (outcome.matchWon === true) {
-        $("#game-info").text(`${outcome.playerWon} wins!`);
+        $("#game-info")
+          .addClass("purple")
+          .text(`${outcome.playerWon} wins!`)
+          .hide()
+          .fadeIn(1000);
       } else if (outcome.matchWon === "draw") {
-        $("#game-info").text(`Match was drawn!`);
+        $("#game-info")
+          .addClass("purple")
+          .text(`Match was drawn!`)
+          .hide()
+          .fadeIn(1000);
       }
     }
 
     // change players
     handlePlayerChange();
-    console.log(currentGame, currentPlayer, gameStatus);
   });
 
   // reset game board
@@ -136,7 +149,10 @@ function handlePlayerChange() {
 const resetGame = function() {
   const eles = $("#game-board h1");
   eles.each(function(index, element) {
-    $(this).text("");
+    $(this)
+      .removeClass("pink")
+      .removeClass("purple")
+      .text("");
   });
   startGame();
 };

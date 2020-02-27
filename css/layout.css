@@ -107,3 +107,16 @@
 .border__1 {
   border: 1px solid;
 }
+
+.border-top__1 {
+  border-top: 1px solid;
+}
+.border-bottom__1 {
+  border-bottom: 1px solid;
+}
+.border-left__1 {
+  border-left: 1px solid;
+}
+.border-right__1 {
+  border-right: 1px solid;
+}
