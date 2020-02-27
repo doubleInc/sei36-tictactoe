@@ -38,6 +38,8 @@ $(document).ready(function() {
       .queue(function(next) {
         $(".slider").removeClass("show");
         next();
+        // reset board
+        resetGame();
       });
   });
 
@@ -88,11 +90,7 @@ $(document).ready(function() {
   // reset game board
   $("#reset").on("click", function() {
     //alert($(this).attr("data-id"));
-    const eles = $("#game-board h1");
-    eles.each(function(index, element) {
-      $(this).text("");
-    });
-    startGame();
+    resetGame();
     console.log("Game reset! ");
   });
 });
@@ -126,6 +124,15 @@ function handlePlayerChange() {
   currentPlayer = currentPlayer === 1 ? 0 : 1;
   // html update
 }
+
+// jquery functions
+const resetGame = function() {
+  const eles = $("#game-board h1");
+  eles.each(function(index, element) {
+    $(this).text("");
+  });
+  startGame();
+};
 
 //possible winning paterns
 const winPerms = [

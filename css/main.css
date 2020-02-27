@@ -51,9 +51,10 @@ main {
     Bottom margin of 2% to even out display, to equal the vertical gap.
     (100% - 32x3 = 4/2 = 2)
   */
-  flex: 0 32%;
+  flex: 1 1 32%;
   margin-bottom: 2%;
 
   /* Height of each element for this example. Should be adjusted accordingly.*/
   height: 160px;
+  max-width: 32%;
 }
